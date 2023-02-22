@@ -1,0 +1,26 @@
+.main-log {
+    position: relative;
+    height: 300px;
+    margin: 10px 20px;
+    padding: 10px;
+    /* padding-top: 40px; */
+    border: 1px solid gold;
+    /* overflow: auto; */
+    overflow: hidden;
+}
+
+.main-cyber-button.main-cyber-button--log-button {
+    top: 0px;
+    position: sticky;
+    padding: 6px;
+    margin-bottom: 0px;
+    background-color: #1d1d1d;
+}
+
+.main-log__output {
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: monospace;
+    /* color: green */
+
+}

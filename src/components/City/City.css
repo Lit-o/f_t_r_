@@ -1,0 +1,20 @@
+.main-city-page {
+    padding: 10px;
+    /* padding-top: 40px; */
+}
+
+.main-city-page h2 {
+    padding-bottom: 20px;
+}
+
+.main-city-page h3 {
+    padding-bottom: 4px;
+}
+
+.main-city-page ul {
+    padding-bottom: 20px;
+}
+
+.main-city-page li {
+    padding-bottom: 4px;
+}

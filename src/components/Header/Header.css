@@ -1,0 +1,104 @@
+header {
+    display: flex;
+    align-items: center; 
+    padding: 4px 20px;
+    
+    border-bottom: 1px solid #555555;
+}
+/* ------------------------------------ */
+header .money {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+
+    margin-left: auto;
+/* 
+    padding: 0px 10px;  
+    border-right: 1px solid aqua;  */
+}
+
+header .money__currency {
+    padding-right: 12px;
+
+    color: gold;
+    font-weight: bold;
+}
+header .money__amount {
+    padding: 0px 12px;
+
+    color: gold;
+    font-weight: bold;
+    transition: color 0.2s ease, border 0.2s ease;
+   
+}
+/* header .money__amount:hover {
+    color: red;
+    border: 2px solid red;
+} */
+
+
+/* ------------------------------------ */
+header .global-game-time {
+    margin-left: 12px; 
+    padding-left: 18px;
+    border-left: 1px solid aqua; 
+}
+
+header .global-game-time {
+    color: gold;
+    text-align: right;
+}
+header .global-game-time__time {
+    font-weight: bold;
+}
+
+header .global-game-time__date {
+    font-size: 10px;
+}
+/* ------------------------------------ */
+header .charState {
+    height: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header .charState__Item {
+    width: 120px;
+    justify-content: space-between;
+    align-items:center;
+    display: flex;
+}
+
+header .charState__Bar {
+    position: relative;
+    width: 110px;
+    height: 3px;
+}
+
+header .charState__Bar .kebab {
+    position: absolute;
+    top: 1px;
+    width: 100%;
+    height: 1px;
+    background-color: gold;
+}
+
+header .charState__Bar .current {
+    height: 3px;
+    background-color: gold;
+}
+
+header .charState__Bar--Danger .kebab, 
+header .charState__Bar--Danger .current{
+    background-color: red;
+}
+
+/* 
+header .charState .ico {
+    width: 7px;
+    height: 7px;
+    background-color: gold;
+    border: 1px solid gold;
+    border-radius: 50%;
+} */

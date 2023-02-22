@@ -1,0 +1,31 @@
+.charCharacteristics li {
+    margin-bottom: 10px;
+}
+
+.charItemFlex {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+}
+
+
+ .progressBar {
+    position: relative;
+    width: 100%;
+    height: 3px;
+
+    margin-top: 4px;
+}
+
+.progressBar .kebab {
+    position: absolute;
+    top: 1px;
+    width: 100%;
+    height: 1px;
+    background-color: gold;
+}
+
+.progressBar .current {
+    height: 3px;
+    background-color: gold;
+}

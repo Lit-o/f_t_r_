@@ -1,0 +1,28 @@
+.main-nav {
+    width: 180px;
+    padding: 10px 20px;
+}
+
+.main-nav li {
+    margin: 10px 0;
+}
+.main-nav a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid rgba(1,1,1, 0);
+    border-left: 1px solid aqua;
+    transition: border 0.4s ease ;
+}
+
+.main-nav a:hover {
+    border: 1px solid gold;
+}
+
+a.main-nav__selected {
+    transition: all 0.4s ease ;
+    border: 1px solid gold;
+    background-color: gold;
+    color: #333;
+    /* border-bottom: 1px solid gold; */
+}

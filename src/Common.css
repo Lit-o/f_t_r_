@@ -1,0 +1,20 @@
+.main-cyber-button {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid aqua;
+    transition: border 0.4s ease ;
+    background-color: transparent;
+  }
+  
+  .main-cyber-button:hover {
+    border: 1px solid gold;
+    cursor: pointer;
+  }
+  
+  .main-cyber-button:active {
+    transition: all 0.4s ease ;
+    border: 1px solid gold;
+    background-color: gold;
+    color: #333;
+  }

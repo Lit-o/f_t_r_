@@ -1,0 +1,13 @@
+.main-flex-container {
+    display: flex;
+  }
+
+.main-aside {
+  /* height: 90vh; */
+  width: 220px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+  
