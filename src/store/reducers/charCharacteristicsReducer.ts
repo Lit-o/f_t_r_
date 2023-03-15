@@ -2,20 +2,33 @@ export enum charCharacteristicsActionsEnum {
     CHAR_CHANGE = 'CHAR_CHANGE'
 }
 
-const initialState = {
-    strength: 1,
-    endurance: 1,
-    agility: 1,
-    perception: 1,
-    intellect: 1,
-    charisma: 1,
-    stressResistantce: 1
+export enum charCharacteristicsNamesEnum {
+    strength = 0,
+    endurance = 1,
+    agility = 2,
+    perception = 3,
+    intellect = 4,
+    charisma = 5,
+    stressResistantce = 6
 }
+
+
+const initialState = [
+    {name: charCharacteristicsNamesEnum.strength, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 500, label: 'Сила'},
+    {name: charCharacteristicsNamesEnum.endurance, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Выносливость'},
+    {name: charCharacteristicsNamesEnum.agility, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Ловкость'},
+    {name: charCharacteristicsNamesEnum.perception, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Внимательность'},
+    {name: charCharacteristicsNamesEnum.intellect, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 700, label: 'Интеллект'},
+    {name: charCharacteristicsNamesEnum.charisma, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 100, label: 'Харизма'},
+    {name: charCharacteristicsNamesEnum.stressResistantce, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Стрессоустойчивость'}
+]
 
 export interface charAction {
     type: charCharacteristicsActionsEnum,
-    value: number,
-    name: nameOfCharacteristicsType
+    name: charCharacteristicsNamesEnum,
+    currentLvl: number,
+    nextLvlExpCup: number,
+    currentExp: number
 }
 
 type charType = typeof initialState
@@ -26,7 +39,11 @@ const charCharacteristicsReducer = (state = initialState, action: charAction): c
         case charCharacteristicsActionsEnum.CHAR_CHANGE:
             return {
                 ...state,
-                [action.name]: state[action.name] + action.value
+                [action.name]: {...state[action.name], 
+                    currentLvl: action.currentLvl,
+                    nextLvlExpCup: action.nextLvlExpCup,
+                    currentExp: action.currentExp
+                }
             }
         default:
             return state

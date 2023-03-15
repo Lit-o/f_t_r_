@@ -3,6 +3,7 @@ import { rollExtraChances, rollExtraChancesEnum, isChance } from "../../core/cor
 import { charCharacteristicsChange } from "../actions/charCharacteristicsAction"
 import { charInventoryAction } from "../actions/charInventoryAction"
 import { charSkillsAction } from "../actions/charSkillsAction"
+import { charCharacteristicsNamesEnum } from "../reducers/charCharacteristicsReducer"
 
 
 export const handleCreateChipThunk = (craft:number, electricalComponentAmount:number, agility:number, intellect:number) => (dispatch: Dispatch) => {
@@ -40,10 +41,15 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
         if (isChance(numberOfSkill)) {
             dispatch(charInventoryAction("electricalComponent", -2))
             dispatch(charInventoryAction("chip", 1))
+
+        //     name,
+        // currentLvl,
+        // nextLvlExpCup,
+        // currentExp
     
-    
-            dispatch(charCharacteristicsChange("intellect", 0.05))
-            dispatch(charCharacteristicsChange("agility", 0.05))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 1, 1000, 55))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 1, 1000, 55))
+
     
             dispatch(charSkillsAction("craft", 2))
     
@@ -51,8 +57,9 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
         } else {
             dispatch(charInventoryAction("electricalComponent", -1))
     
-            dispatch(charCharacteristicsChange("intellect", 0.01))
-            dispatch(charCharacteristicsChange("agility", 0.01))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 1, 1000, 15))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 1, 1000, 15))
+
     
             dispatch(charSkillsAction("craft", 1))
             console.log('Чип совершенно не создан!')

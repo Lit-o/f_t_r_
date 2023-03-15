@@ -1,9 +1,11 @@
-import {charCharacteristicsActionsEnum, nameOfCharacteristicsType, charAction} from '../reducers/charCharacteristicsReducer'
+import {charCharacteristicsActionsEnum, charCharacteristicsNamesEnum, charAction} from '../reducers/charCharacteristicsReducer'
 
-export const charCharacteristicsChange = (name:nameOfCharacteristicsType, value:number):charAction => {
+export const charCharacteristicsChange = (name:charCharacteristicsNamesEnum, currentLvl:number, nextLvlExpCup:number, currentExp:number  ):charAction => {
     return {
         type: charCharacteristicsActionsEnum.CHAR_CHANGE, 
-        name, 
-        value
+        name,
+        currentLvl,
+        nextLvlExpCup,
+        currentExp
     }
 }
