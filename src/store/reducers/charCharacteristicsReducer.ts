@@ -37,14 +37,15 @@ export type nameOfCharacteristicsType = keyof charType
 const charCharacteristicsReducer = (state = initialState, action: charAction): charType => {
     switch (action.type) {
         case charCharacteristicsActionsEnum.CHAR_CHANGE:
-            return {
-                ...state,
-                [action.name]: {...state[action.name], 
+            return [
+                ...state.slice(0, action.name),
+                {...state[action.name], 
                     currentLvl: action.currentLvl,
                     nextLvlExpCup: action.nextLvlExpCup,
                     currentExp: action.currentExp
-                }
-            }
+                },
+                ...state.slice(action.name + 1)
+            ]
         default:
             return state
     }

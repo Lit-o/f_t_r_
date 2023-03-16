@@ -6,10 +6,10 @@ import './CharCharacteristics.css'
 
 const CharCharacteristics = () => {
     const charCharacteristicsState = useSelector((state: rootStateType) => state.charCharacteristics)
-
-    const charCharacteristicsJXS = charCharacteristicsState.map(el => {
+    console.log(charCharacteristicsState)
+    const charCharacteristicsJXS = charCharacteristicsState.map((el, i) => {
         return (
-            <li>
+            <li key={i}>
                 <div className="charItemFlex">
                     <p>{el.label}</p>
                     <p>{el.currentLvl}</p>

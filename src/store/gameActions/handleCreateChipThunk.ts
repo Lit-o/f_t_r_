@@ -49,6 +49,7 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
     
             dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 1, 1000, 55))
             dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 1, 1000, 55))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.strength, 1, 1000, 35))
 
     
             dispatch(charSkillsAction("craft", 2))
@@ -58,7 +59,8 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
             dispatch(charInventoryAction("electricalComponent", -1))
     
             dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 1, 1000, 15))
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 1, 1000, 15))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 1, 1000, 55))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.strength, 1, 1000, 35))
 
     
             dispatch(charSkillsAction("craft", 1))

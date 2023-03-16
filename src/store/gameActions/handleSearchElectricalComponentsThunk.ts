@@ -26,14 +26,14 @@ export const handleSearchElectricalComponentsThunk = (search:number, endurance:n
     // наш скилл
     const numberOfSkill = (endurance * 2) + (perception * 5) + search
     if (isChance(numberOfSkill)) {
-        dispatch(charCharacteristicsChange("endurance", 0.05))
-        dispatch(charCharacteristicsChange("perception", 0.05))
+        // dispatch(charCharacteristicsChange("endurance", 0.05))
+        // dispatch(charCharacteristicsChange("perception", 0.05))
         dispatch(charInventoryAction("electricalComponent", 1))
         dispatch(charSkillsAction("search", 2))
 
     } else {
-        dispatch(charCharacteristicsChange("endurance", 0.01))
-        dispatch(charCharacteristicsChange("perception", 0.01))
+        // dispatch(charCharacteristicsChange("endurance", 0.01))
+        // dispatch(charCharacteristicsChange("perception", 0.01))
         dispatch(charSkillsAction("search", 1))
     }
 
