@@ -40,7 +40,8 @@ const charCharacteristicsReducer = (state = initialState, action: IAction): TSta
                         currentExp: state[action.name].currentExp + action.currentExp
                     },
                     ...state.slice(action.name + 1)
-                ]               
+                ]        
+                    //Ввести else if и условие для кап прокачки    
             } else {
                 const sumEx = state[action.name].currentExp + action.currentExp
                 const curEx = sumEx - state[action.name].nextLvlExpCup 
