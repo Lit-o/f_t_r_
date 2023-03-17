@@ -42,14 +42,10 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
             dispatch(charInventoryAction("electricalComponent", -2))
             dispatch(charInventoryAction("chip", 1))
 
-        //     name,
-        // currentLvl,
-        // nextLvlExpCup,
-        // currentExp
     
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 1, 1000, 55))
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 1, 1000, 55))
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.strength, 1, 1000, 35))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 55))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 55))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.strength, 35))
 
     
             dispatch(charSkillsAction("craft", 2))
@@ -58,15 +54,15 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
         } else {
             dispatch(charInventoryAction("electricalComponent", -1))
     
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 1, 1000, 15))
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 1, 1000, 55))
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.strength, 1, 1000, 35))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 15))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 55))
+            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.strength, 35))
 
     
             dispatch(charSkillsAction("craft", 1))
             console.log('Чип совершенно не создан!')
         }
-    }, 2000)
+    }, 5000)
     
     
 }

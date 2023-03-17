@@ -9,7 +9,7 @@ enum inventoryLabelsEnum {
 let inventory = {
     electricalComponent: {
         label: inventoryLabelsEnum.electricalComponent,
-        amount: 10
+        amount: 1110
     },
     chip: {
         label: inventoryLabelsEnum.chip,

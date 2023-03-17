@@ -1,6 +1,6 @@
 import './Footer.css'
 
-const hi:string = "F_T_R Game ver 0.0.1.5"
+const hi:string = "F_T_R Game ver 0.0.1.6"
 
 const Footer = () => {
     return (

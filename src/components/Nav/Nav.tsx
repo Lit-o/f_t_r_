@@ -14,6 +14,9 @@ function Nav() {
                     <NavLink to="/home" exact activeClassName="main-nav__selected">Жилище</NavLink>
                 </li>
                 <li>
+                    <NavLink to="/property" exact activeClassName="main-nav__selected">Имущество</NavLink>
+                </li>
+                <li>
                     <NavLink to="/city" exact activeClassName="main-nav__selected">Город</NavLink>
                 </li>
                 <li>

@@ -1,15 +1,15 @@
-.charCharacteristics li {
+.char-characteristics li {
     margin-bottom: 10px;
 }
 
-.charItemFlex {
+.char-item-flex {
     display: flex;
     justify-content: space-between;
     min-width: 220px;
 }
 
 
- .progressBar {
+ .progress-bar {
     position: relative;
     width: 100%;
     height: 3px;
@@ -17,7 +17,7 @@
     margin-top: 4px;
 }
 
-.progressBar .kebab {
+.progress-bar .kebab {
     position: absolute;
     top: 1px;
     width: 100%;
@@ -25,7 +25,7 @@
     background-color: gold;
 }
 
-.progressBar .current {
+.progress-bar .current {
     height: 3px;
     background-color: gold;
 }

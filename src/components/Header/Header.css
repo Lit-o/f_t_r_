@@ -56,27 +56,27 @@ header .global-game-time__date {
     font-size: 10px;
 }
 /* ------------------------------------ */
-header .charState {
+header .char-state {
     height: 23px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-header .charState__Item {
+header .char-state__item {
     width: 120px;
     justify-content: space-between;
     align-items:center;
     display: flex;
 }
 
-header .charState__Bar {
+header .char-state__bar {
     position: relative;
     width: 110px;
     height: 3px;
 }
 
-header .charState__Bar .kebab {
+header .char-state__bar .kebab {
     position: absolute;
     top: 1px;
     width: 100%;
@@ -84,13 +84,13 @@ header .charState__Bar .kebab {
     background-color: gold;
 }
 
-header .charState__Bar .current {
+header .char-state__bar .current {
     height: 3px;
     background-color: gold;
 }
 
-header .charState__Bar--Danger .kebab, 
-header .charState__Bar--Danger .current{
+header .char-state__bar--danger .kebab, 
+header .char-state__bar--danger .current{
     background-color: red;
 }
 

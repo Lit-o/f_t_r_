@@ -10,11 +10,11 @@ const CharCharacteristics = () => {
     const charCharacteristicsJXS = charCharacteristicsState.map((el, i) => {
         return (
             <li key={i}>
-                <div className="charItemFlex">
+                <div className="char-item-flex">
                     <p>{el.label}</p>
                     <p>{el.currentLvl}</p>
                 </div>
-                <div className="progressBar">
+                <div className="progress-bar">
                     <div className="kebab"></div>
                     <div className="current" style={{ width: `${el.currentExp / el.nextLvlExpCup * 100}%` }}></div>
                 </div>
@@ -24,7 +24,7 @@ const CharCharacteristics = () => {
 
 
     return (
-        <div className='charCharacteristics'>
+        <div className='char-characteristics'>
             <h3>Характеристики</h3>
             <ul>
                 {charCharacteristicsJXS}

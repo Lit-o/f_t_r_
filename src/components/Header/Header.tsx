@@ -5,30 +5,30 @@ import './Header.css'
 const Header = () => {
     return (
         <header>
-            <div className="charState">
-                <div className="charState__Item charState__Health">
+            <div className="char-state">
+                <div className=".char-state__item charState__Health">
                     <div className="ico">
 
                     </div>
-                    <div className="charState__Bar healthBar">
+                    <div className="char-state__bar health-bar">
                         <div className="kebab"></div>
                         <div className="current" style={{width: '70%'}}></div>
                     </div>
                 </div>
-                <div className="charState__Item charState__Energy">
+                <div className=".char-state__item charState__Energy">
                     <div className="ico">
 
                     </div>
-                    <div className="charState__Bar energyBar">
+                    <div className="char-state__bar energy-bar">
                         <div className="kebab"></div>
                         <div className="current" style={{width: '84%'}}></div>
                     </div>
                 </div>
-                <div className="charState__Item charState__Motivation">
+                <div className=".char-state__item charState__Motivation">
                     <div className="ico">
 
                     </div>
-                    <div className="charState__Bar motivationBar charState__Bar--Danger">
+                    <div className="char-state__bar motivationBar char-state__bar--danger">
                         <div className="kebab"></div>
                         <div className="current" style={{width: '18%'}}></div>
                     </div>
