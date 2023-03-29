@@ -2,17 +2,12 @@ import { useSelector } from 'react-redux';
 import './Character.css'
 import { rootStateType } from '../../store/store'
 import CharCharacteristics from './CharCharacteristics/CharCharacteristics';
+import { charSkillsNamesEnum } from '../../store/reducers/charSkillsReducer'
+import CharSkills from './CharSkills/CharSkills';
+// import componentsImg from '../../stuff/115.png'
 
 function Character() {
-    const charSkillsState = useSelector((state: rootStateType) => state.charSkills)
     const electricalComponent = useSelector((state: rootStateType) => state.charInventory.electricalComponent)
-
-
-
-    const {
-        search,
-        craft
-    } = charSkillsState
 
     const {amount, label} = electricalComponent
     return (
@@ -20,14 +15,7 @@ function Character() {
             <h2>Персонаж</h2>
             <div>
                 <CharCharacteristics/>
-
-
-                <h3>Навыки</h3>
-                <ul>
-                    <li>Крафт:{craft}</li>
-                    <li>Поиск:{search}</li>
-                </ul>
-
+                <CharSkills/>
 
                 <h3>Состояние</h3>
                 <ul>
@@ -48,7 +36,10 @@ function Character() {
 
                 <h3>Инвентарь</h3>
                 <ul>
-                    <li>{label}: {amount}</li>
+                    <li>
+                        {/* <img src={componentsImg} alt="" style={{width: '520px'}}/> */}
+                        {label}: {amount}
+                        </li>
                 </ul>
 
             </div>

@@ -6,8 +6,7 @@ import './CharCharacteristics.css'
 
 const CharCharacteristics = () => {
     const charCharacteristicsState = useSelector((state: rootStateType) => state.charCharacteristics)
-    console.log(charCharacteristicsState)
-    const charCharacteristicsJXS = charCharacteristicsState.map((el, i) => {
+    const listOfCharacteristicsJSX = charCharacteristicsState.map((el, i) => {
         return (
             <li key={i}>
                 <div className="char-item-flex">
@@ -27,7 +26,7 @@ const CharCharacteristics = () => {
         <div className='char-characteristics'>
             <h3>Характеристики</h3>
             <ul>
-                {charCharacteristicsJXS}
+                {listOfCharacteristicsJSX}
             </ul>
         </div>
     )

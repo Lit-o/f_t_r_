@@ -1,9 +1,9 @@
 import {charCharacteristicsActionsEnum, charCharacteristicsNamesEnum, IAction} from '../reducers/charCharacteristicsReducer'
 
-export const charCharacteristicsChange = (name:charCharacteristicsNamesEnum, currentExp:number ):IAction => {
+export const charCharacteristicsAction = (name:charCharacteristicsNamesEnum, gainedExp:number ):IAction => {
     return {
         type: charCharacteristicsActionsEnum.CHAR_CHANGE, 
         name,
-        currentExp
+        gainedExp
     }
 }

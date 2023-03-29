@@ -4,6 +4,7 @@ import { rootStateType } from "../../store/store";
 import  './Home.css'
 
 import { charCharacteristicsNamesEnum } from "../../store/reducers/charCharacteristicsReducer"
+import { charSkillsNamesEnum } from "../../store/reducers/charSkillsReducer"
 
 function Home() {
     const dispatch = useDispatch()
@@ -11,13 +12,16 @@ function Home() {
     const {label, amount} = chip
     const electricalComponentAmount = useSelector((state:rootStateType) => state.charInventory.electricalComponent.amount)
 
-    const craft = useSelector((state:rootStateType) => state.charSkills.craft)
+    // const craft = useSelector((state:rootStateType) => state.charSkills.craft)
 
 
   
-    const array = useSelector((state:rootStateType) => state.charCharacteristics)
-    const agility = array[charCharacteristicsNamesEnum.agility].currentLvl
-    const intellect = array[charCharacteristicsNamesEnum.intellect].currentLvl
+    const charCharacteristics = useSelector((state:rootStateType) => state.charCharacteristics)
+    const agility = charCharacteristics[charCharacteristicsNamesEnum.agility].currentLvl
+    const intellect = charCharacteristics[charCharacteristicsNamesEnum.intellect].currentLvl
+
+    const craft = useSelector((state:rootStateType) => state.charSkills[charSkillsNamesEnum.craft].power)
+
 
    
     const handleCreateChip = () => dispatch(handleCreateChipThunk(craft, electricalComponentAmount, agility, intellect))

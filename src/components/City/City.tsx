@@ -1,15 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { handleSearchElectricalComponentsThunk } from "../../store/gameActions/handleSearchElectricalComponentsThunk";
 import { charCharacteristicsNamesEnum } from "../../store/reducers/charCharacteristicsReducer";
+import { charSkillsNamesEnum } from "../../store/reducers/charSkillsReducer";
 import { rootStateType } from "../../store/store";
 import './City.css'
 
 
 function City() {
     const dispatch = useDispatch()
-    const search = useSelector((state: rootStateType) => state.charSkills.search )
-    // const {endurance, perception} = useSelector((state: rootStateType) => state.charCharacteristics )
-  
+    const search = useSelector((state: rootStateType) => state.charSkills[charSkillsNamesEnum.search].power )
+
     const array = useSelector((state:rootStateType) => state.charCharacteristics)
     const endurance = array[charCharacteristicsNamesEnum.endurance].currentLvl
     const perception = array[charCharacteristicsNamesEnum.perception].currentLvl

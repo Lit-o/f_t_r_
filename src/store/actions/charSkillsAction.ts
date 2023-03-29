@@ -1,8 +1,8 @@
-import { ActionType, charSkillsTypeKeys, charSkillsEnum } from "../reducers/charSkillsReducer";
+import { charSkillsEnum, charSkillsNamesEnum, IAction } from "../reducers/charSkillsReducer";
 
 
-export const charSkillsAction = (name: charSkillsTypeKeys, value:number):ActionType => ({
+export const charSkillsAction = (name: charSkillsNamesEnum, gainedExp:number):IAction => ({
     type: charSkillsEnum.SKILL_CHANGE,
     name,
-    value
+    gainedExp
 })

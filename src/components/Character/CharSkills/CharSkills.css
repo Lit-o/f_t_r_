@@ -1,0 +1,9 @@
+.skills li {
+    margin-bottom: 10px;
+}
+
+.skills-item-flex {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+}

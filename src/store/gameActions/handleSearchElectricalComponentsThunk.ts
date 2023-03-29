@@ -1,8 +1,10 @@
 import { Dispatch } from "redux"
 import { rollExtraChances, rollExtraChancesEnum, isChance } from "../../core/coreMechanics"
-import { charCharacteristicsChange } from "../actions/charCharacteristicsAction"
+import { charCharacteristicsAction } from "../actions/charCharacteristicsAction"
 import { charInventoryAction } from "../actions/charInventoryAction"
 import { charSkillsAction } from "../actions/charSkillsAction"
+import { charSkillsNamesEnum } from "../reducers/charSkillsReducer"
+import { charCharacteristicsNamesEnum } from "../reducers/charCharacteristicsReducer"
 
 
 export const handleSearchElectricalComponentsThunk = (search:number, endurance:number, perception:number) => (dispatch: Dispatch) => {
@@ -24,17 +26,19 @@ export const handleSearchElectricalComponentsThunk = (search:number, endurance:n
     }
 
     // наш скилл
-    const numberOfSkill = (endurance * 2) + (perception * 5) + search
+    const numberOfSkill = (endurance * 2) + (perception * 5) * search
     if (isChance(numberOfSkill)) {
-        // dispatch(charCharacteristicsChange("endurance", 0.05))
-        // dispatch(charCharacteristicsChange("perception", 0.05))
+        dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.endurance, 15))
+        dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.perception, 15))
+
         dispatch(charInventoryAction("electricalComponent", 1))
-        dispatch(charSkillsAction("search", 2))
+        dispatch(charSkillsAction(charSkillsNamesEnum.search, 55))
 
     } else {
-        // dispatch(charCharacteristicsChange("endurance", 0.01))
-        // dispatch(charCharacteristicsChange("perception", 0.01))
-        dispatch(charSkillsAction("search", 1))
+        dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.endurance, 5))
+        dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.perception, 5))
+
+        dispatch(charSkillsAction(charSkillsNamesEnum.search, 15))
     }
 
 }

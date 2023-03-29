@@ -1,9 +1,10 @@
 import { Dispatch } from "redux"
 import { rollExtraChances, rollExtraChancesEnum, isChance } from "../../core/coreMechanics"
-import { charCharacteristicsChange } from "../actions/charCharacteristicsAction"
+import { charCharacteristicsAction } from "../actions/charCharacteristicsAction"
 import { charInventoryAction } from "../actions/charInventoryAction"
 import { charSkillsAction } from "../actions/charSkillsAction"
 import { charCharacteristicsNamesEnum } from "../reducers/charCharacteristicsReducer"
+import { charSkillsNamesEnum } from "../reducers/charSkillsReducer"
 
 
 export const handleCreateChipThunk = (craft:number, electricalComponentAmount:number, agility:number, intellect:number) => (dispatch: Dispatch) => {
@@ -43,23 +44,24 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
             dispatch(charInventoryAction("chip", 1))
 
     
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 55))
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 55))
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.strength, 35))
+            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.intellect, 15))
+            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.agility, 15))
+            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.strength, 15))
 
+            dispatch(charSkillsAction(charSkillsNamesEnum.craft, 55))
     
-            dispatch(charSkillsAction("craft", 2))
+            // dispatch(charSkillsAction("craft", 2))
     
             console.log('Чип создан!')
         } else {
             dispatch(charInventoryAction("electricalComponent", -1))
     
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.intellect, 15))
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.agility, 55))
-            dispatch(charCharacteristicsChange(charCharacteristicsNamesEnum.strength, 35))
+            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.intellect, 5))
+            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.agility, 5))
+            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.strength, 5))
 
     
-            dispatch(charSkillsAction("craft", 1))
+            dispatch(charSkillsAction(charSkillsNamesEnum.craft, 15))
             console.log('Чип совершенно не создан!')
         }
     }, 5000)
