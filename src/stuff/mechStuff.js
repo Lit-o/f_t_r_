@@ -28,6 +28,7 @@ const isExtraChance = () => {
 
 
 
+
 // --------WRONG-SHALLOW-COPY----------------
 const stateShallow = [
     { currentLvl: 10, currentExp: 0, label: 'Сила'},
