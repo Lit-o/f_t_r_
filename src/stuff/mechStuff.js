@@ -46,7 +46,7 @@ const newStateShallow = [
 ]
 
 stateShallow[1].currentExp = 2222
-stateShallow[2].currentExp = 2222
+stateShallow[2].currentExp = 3333
 
 console.log(stateShallow)
 console.log(newStateShallow)
@@ -70,7 +70,11 @@ const newStateDeep = [
 ]
 
 stateDeep[1].currentExp = 2222
-stateDeep[2].currentExp = 2222
+stateDeep[2].currentExp = 3333
 
 console.log(stateDeep)
 console.log(newStateDeep)
+
+
+
+

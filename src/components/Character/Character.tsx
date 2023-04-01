@@ -2,12 +2,13 @@ import { useSelector } from 'react-redux';
 import './Character.css'
 import { rootStateType } from '../../store/store'
 import CharCharacteristics from './CharCharacteristics/CharCharacteristics';
-import { charSkillsNamesEnum } from '../../store/reducers/charSkillsReducer'
+import { charSkillsNamesEnum } from '../../store/reducers/char/charSkillsReducer'
 import CharSkills from './CharSkills/CharSkills';
 // import componentsImg from '../../stuff/115.png'
 
 function Character() {
     const electricalComponent = useSelector((state: rootStateType) => state.charInventory.electricalComponent)
+    const {LabelHP, cupHP, currentHP} = useSelector((state: rootStateType) => state.charHealth)
 
     const {amount, label} = electricalComponent
     return (
@@ -19,7 +20,7 @@ function Character() {
 
                 <h3>Состояние</h3>
                 <ul>
-                    <li>Здоровье: 10/15</li>
+                    <li>{LabelHP}: {currentHP}/{cupHP}</li>
                     <li>Энергия: 10/12</li>
                     <li>Мотивация: 10/60</li>
                 </ul>

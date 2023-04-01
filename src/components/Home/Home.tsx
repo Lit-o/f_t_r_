@@ -3,8 +3,8 @@ import { handleCreateChipThunk } from "../../store/gameActions/handleCreateChipT
 import { rootStateType } from "../../store/store";
 import  './Home.css'
 
-import { charCharacteristicsNamesEnum } from "../../store/reducers/charCharacteristicsReducer"
-import { charSkillsNamesEnum } from "../../store/reducers/charSkillsReducer"
+import { charCharacteristicsNamesEnum } from "../../store/reducers/char/charCharacteristicsReducer"
+import { charSkillsNamesEnum } from "../../store/reducers/char/charSkillsReducer"
 
 function Home() {
     const dispatch = useDispatch()

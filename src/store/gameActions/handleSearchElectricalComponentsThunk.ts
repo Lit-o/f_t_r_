@@ -1,10 +1,11 @@
 import { Dispatch } from "redux"
 import { rollExtraChances, rollExtraChancesEnum, isChance } from "../../core/coreMechanics"
-import { charCharacteristicsAction } from "../actions/charCharacteristicsAction"
+import { charCharacteristicsAction } from "../actions/char/charCharacteristicsAction"
 import { charInventoryAction } from "../actions/charInventoryAction"
-import { charSkillsAction } from "../actions/charSkillsAction"
-import { charSkillsNamesEnum } from "../reducers/charSkillsReducer"
-import { charCharacteristicsNamesEnum } from "../reducers/charCharacteristicsReducer"
+import { charSkillsAction } from "../actions/char/charSkillsAction"
+import { charSkillsNamesEnum } from "../reducers/char/charSkillsReducer"
+import { charCharacteristicsNamesEnum } from "../reducers/char/charCharacteristicsReducer"
+import { charCurrentHPAction } from "../actions/char/charState/charHealthAction"
 
 
 export const handleSearchElectricalComponentsThunk = (search:number, endurance:number, perception:number) => (dispatch: Dispatch) => {
@@ -26,7 +27,7 @@ export const handleSearchElectricalComponentsThunk = (search:number, endurance:n
     }
 
     // наш скилл
-    const numberOfSkill = (endurance * 2) + (perception * 5) * search
+    const numberOfSkill = (endurance * 2) + (perception * 1) + search
     if (isChance(numberOfSkill)) {
         dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.endurance, 15))
         dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.perception, 15))
@@ -39,6 +40,7 @@ export const handleSearchElectricalComponentsThunk = (search:number, endurance:n
         dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.perception, 5))
 
         dispatch(charSkillsAction(charSkillsNamesEnum.search, 15))
+        dispatch(charCurrentHPAction(-1))
     }
 
 }

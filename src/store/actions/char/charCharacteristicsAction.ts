@@ -1,4 +1,4 @@
-import {charCharacteristicsActionsEnum, charCharacteristicsNamesEnum, IAction} from '../reducers/charCharacteristicsReducer'
+import {charCharacteristicsActionsEnum, charCharacteristicsNamesEnum, IAction} from '../../reducers/char/charCharacteristicsReducer'
 
 export const charCharacteristicsAction = (name:charCharacteristicsNamesEnum, gainedExp:number ):IAction => {
     return {

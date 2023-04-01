@@ -1,8 +1,14 @@
+import { useSelector } from 'react-redux'
+import { rootStateType } from '../../store/store'
 import './Header.css'
 
 
 
 const Header = () => {
+
+    const { cupHP, currentHP, danger } = useSelector((state: rootStateType) => state.charHealth)
+
+
     return (
         <header>
             <div className="char-state">
@@ -10,10 +16,13 @@ const Header = () => {
                     <div className="ico">
 
                     </div>
-                    <div className="char-state__bar health-bar">
+                    <div className={`char-state__bar health-bar ${danger ? 'char-state__bar--danger' : ''}`}>
                         <div className="kebab"></div>
-                        <div className="current" style={{width: '70%'}}></div>
+                        <div className={'current'}
+                            style={{ width: `${currentHP / cupHP * 100}%` }}>
+                        </div>
                     </div>
+
                 </div>
                 <div className=".char-state__item charState__Energy">
                     <div className="ico">
@@ -21,7 +30,7 @@ const Header = () => {
                     </div>
                     <div className="char-state__bar energy-bar">
                         <div className="kebab"></div>
-                        <div className="current" style={{width: '84%'}}></div>
+                        <div className="current" style={{ width: '84%' }}></div>
                     </div>
                 </div>
                 <div className=".char-state__item charState__Motivation">
@@ -30,7 +39,7 @@ const Header = () => {
                     </div>
                     <div className="char-state__bar motivationBar char-state__bar--danger">
                         <div className="kebab"></div>
-                        <div className="current" style={{width: '18%'}}></div>
+                        <div className="current" style={{ width: '18%' }}></div>
                     </div>
                 </div>
             </div>

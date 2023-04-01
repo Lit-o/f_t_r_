@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { handleSearchElectricalComponentsThunk } from "../../store/gameActions/handleSearchElectricalComponentsThunk";
-import { charCharacteristicsNamesEnum } from "../../store/reducers/charCharacteristicsReducer";
-import { charSkillsNamesEnum } from "../../store/reducers/charSkillsReducer";
+import { charCharacteristicsNamesEnum } from "../../store/reducers/char/charCharacteristicsReducer";
+import { charSkillsNamesEnum } from "../../store/reducers/char/charSkillsReducer";
 import { rootStateType } from "../../store/store";
 import './City.css'
 

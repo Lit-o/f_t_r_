@@ -1,4 +1,4 @@
-import { charSkillsEnum, charSkillsNamesEnum, IAction } from "../reducers/charSkillsReducer";
+import { charSkillsEnum, charSkillsNamesEnum, IAction } from "../../reducers/char/charSkillsReducer";
 
 
 export const charSkillsAction = (name: charSkillsNamesEnum, gainedExp:number):IAction => ({

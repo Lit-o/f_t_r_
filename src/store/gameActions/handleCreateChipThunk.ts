@@ -1,10 +1,11 @@
 import { Dispatch } from "redux"
 import { rollExtraChances, rollExtraChancesEnum, isChance } from "../../core/coreMechanics"
-import { charCharacteristicsAction } from "../actions/charCharacteristicsAction"
+import { charCharacteristicsAction } from "../actions/char/charCharacteristicsAction"
 import { charInventoryAction } from "../actions/charInventoryAction"
-import { charSkillsAction } from "../actions/charSkillsAction"
-import { charCharacteristicsNamesEnum } from "../reducers/charCharacteristicsReducer"
-import { charSkillsNamesEnum } from "../reducers/charSkillsReducer"
+import { charSkillsAction } from "../actions/char/charSkillsAction"
+import { charCharacteristicsNamesEnum } from "../reducers/char/charCharacteristicsReducer"
+import { charSkillsNamesEnum } from "../reducers/char/charSkillsReducer"
+import { charCurrentHPAction } from "../actions/char/charState/charHealthAction"
 
 
 export const handleCreateChipThunk = (craft:number, electricalComponentAmount:number, agility:number, intellect:number) => (dispatch: Dispatch) => {
@@ -62,6 +63,8 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
 
     
             dispatch(charSkillsAction(charSkillsNamesEnum.craft, 15))
+
+            dispatch(charCurrentHPAction(-1))
             console.log('Чип совершенно не создан!')
         }
     }, 5000)
