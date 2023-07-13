@@ -1,18 +1,36 @@
-import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+// import { Dispatch } from "redux"
+
 import { rootStateType } from '../../store/store'
 import './Header.css'
-
+import { charCupHPAction } from '../../store/actions/char/charState/charHealthAction'
 
 
 const Header = () => {
-
+    // TODO: SPLIT CODE TO COMPONENTS
     const { cupHP, currentHP, danger } = useSelector((state: rootStateType) => state.charHealth)
+    // TODO: ENUM charCharacteristics[0]!!!!
+    const strength = useSelector((state: rootStateType) => state.charCharacteristics[0].currentLvl)
+    const endurance = useSelector((state: rootStateType) => state.charCharacteristics[1].currentLvl)
 
+    const dispatch = useDispatch()
+    // const setCupHP = () => {
+    //     dispatch(charCupHPAction(1))
+    // }
+
+    useEffect(()=> {
+        console.log(strength)
+        console.log(cupHP)
+        dispatch(charCupHPAction(1))
+
+    }, [strength, endurance])
 
     return (
         <header>
             <div className="char-state">
-                <div className=".char-state__item charState__Health">
+                {/* TODO: header .char-state__item why??????? */}
+                <div className="char-state__item charState__Health">
                     <div className="ico">
 
                     </div>
@@ -24,7 +42,7 @@ const Header = () => {
                     </div>
 
                 </div>
-                <div className=".char-state__item charState__Energy">
+                <div className="char-state__item charState__Energy">
                     <div className="ico">
 
                     </div>
@@ -33,7 +51,7 @@ const Header = () => {
                         <div className="current" style={{ width: '84%' }}></div>
                     </div>
                 </div>
-                <div className=".char-state__item charState__Motivation">
+                <div className="char-state__item charState__Motivation">
                     <div className="ico">
 
                     </div>

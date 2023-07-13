@@ -1,0 +1,5 @@
+
+-) Переход на toolkit
+-) Переход на .module.scss
+-) Danger Header progress-bar doesn't work
+-) HOC с useEffect для комплексной логики

@@ -1,5 +1,6 @@
 .main-flex-container {
     display: flex;
+    /* border: 1px solid #000; */
   }
 
 .main-aside {

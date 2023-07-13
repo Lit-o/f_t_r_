@@ -4,13 +4,13 @@ import {
     Route
 } from "react-router-dom";
 
-import "./App.css"
 import "./Common.css"
+import "./App.css"
 
+import Header from "./components/Header/Header"
 import Character from "./components/Character/Character"
 import City from "./components/City/City"
 import Footer from "./components/Footer/Footer"
-import Header from "./components/Header/Header"
 import History from "./components/History/History";
 import Home from "./components/Home/Home"
 import Log from "./components/Log/Log";
@@ -18,35 +18,33 @@ import Nav from "./components/Nav/Nav"
 
 function App() {
     return (
-        <>
-            <Router>
-                <Header />
-                <div className="main-flex-container">
-                    <aside className='main-aside'>
-                        <Nav />
-                        <Log />
-                    </aside>
-                    
-                    <Switch>
-                        <Route path="/" exact>
-                            <Character />
-                        </Route>
+        <Router>
+            <Header />
+            <div className="main-flex-container">
+                <aside className='main-aside'>
+                    <Nav />
+                    <Log />
+                </aside>
 
-                        <Route path="/home" exact>
-                            <Home  />
-                        </Route>
+                <Switch>
+                    <Route path="/" exact>
+                        <Character />
+                    </Route>
 
-                        <Route path="/city" exact>
-                            <City />
-                        </Route>
-                        <Route path="/history" exact>
-                            <History />
-                        </Route>
-                    </Switch>
-                </div>
-                <Footer />
-            </Router>
-        </>
+                    <Route path="/home" exact>
+                        <Home />
+                    </Route>
+
+                    <Route path="/city" exact>
+                        <City />
+                    </Route>
+                    <Route path="/history" exact>
+                        <History />
+                    </Route>
+                </Switch>
+            </div>
+            <Footer />
+        </Router>
     );
 }
 

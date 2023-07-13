@@ -63,12 +63,12 @@ header .char-state {
     justify-content: space-between;
 }
 
-header .char-state__item {
+/* header .char-state__item {
     width: 120px;
     justify-content: space-between;
     align-items:center;
     display: flex;
-}
+} */
 
 header .char-state__bar {
     position: relative;

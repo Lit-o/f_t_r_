@@ -15,8 +15,8 @@ export type IAction = IActionCurrent | IActionCup
 
 const initialState = {
     LabelHP: 'Здоровье',
-    currentHP: 20,
-    cupHP: 20,
+    currentHP: 30,
+    cupHP: 30,
     danger: false
 }
 type TState = typeof initialState
@@ -37,7 +37,6 @@ const healthReducer = (state = initialState, action:IAction): TState => {
                     danger: false
                 }
             }
-
         case ActionTypeEnum.CUP_HP_CHANGE:
             return {
                 ...state,
