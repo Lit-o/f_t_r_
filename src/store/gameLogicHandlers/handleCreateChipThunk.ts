@@ -45,9 +45,9 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
             dispatch(charInventoryAction("chip", 1))
 
     
-            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.intellect, 12215))
-            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.agility, 12215))
-            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.strength, 12215))
+            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.intellect, 15))
+            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.agility, 15))
+            dispatch(charCharacteristicsAction(charCharacteristicsNamesEnum.strength, 15))
 
             dispatch(charSkillsAction(charSkillsNamesEnum.craft, 55))
     
@@ -67,7 +67,7 @@ export const handleCreateChipThunk = (craft:number, electricalComponentAmount:nu
             dispatch(charCurrentHPAction(-1))
             console.log('Чип совершенно не создан!')
         }
-    }, 5000)
+    }, 1000)
     
     
 }

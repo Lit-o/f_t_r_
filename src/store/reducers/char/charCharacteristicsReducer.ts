@@ -13,13 +13,13 @@ export enum charCharacteristicsNamesEnum {
 }
 
 const initialState = [
-    {name: charCharacteristicsNamesEnum.strength, currentLvl: 10, nextLvlExpCup: 55000, currentExp: 0, label: 'Сила', effect: 0, power: 10},
-    {name: charCharacteristicsNamesEnum.endurance, currentLvl: 10, nextLvlExpCup: 55000, currentExp: 0, label: 'Выносливость', effect: 0, power: 10},
-    {name: charCharacteristicsNamesEnum.agility, currentLvl: 10, nextLvlExpCup: 55000, currentExp: 0, label: 'Ловкость', effect: 0, power: 10},
-    {name: charCharacteristicsNamesEnum.perception, currentLvl: 10, nextLvlExpCup: 55000, currentExp: 0, label: 'Внимательность', effect: 0, power: 10},
-    {name: charCharacteristicsNamesEnum.intellect, currentLvl: 10, nextLvlExpCup: 55000, currentExp: 0, label: 'Интеллект', effect: 0, power: 10},
-    {name: charCharacteristicsNamesEnum.charisma, currentLvl: 10, nextLvlExpCup: 55000, currentExp: 0, label: 'Харизма', effect: 0, power: 10},
-    {name: charCharacteristicsNamesEnum.stressResistantce, currentLvl: 10, nextLvlExpCup: 55000, currentExp: 0, label: 'Стрессоустойчивость', effect: 0, power: 10}
+    {name: charCharacteristicsNamesEnum.strength, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Сила', effect: 0, power: 1},
+    {name: charCharacteristicsNamesEnum.endurance, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Выносливость', effect: 0, power: 1},
+    {name: charCharacteristicsNamesEnum.agility, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Ловкость', effect: 0, power: 1},
+    {name: charCharacteristicsNamesEnum.perception, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Внимательность', effect: 0, power: 1},
+    {name: charCharacteristicsNamesEnum.intellect, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Интеллект', effect: 0, power: 1},
+    {name: charCharacteristicsNamesEnum.charisma, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Харизма', effect: 0, power: 1},
+    {name: charCharacteristicsNamesEnum.stressResistantce, currentLvl: 1, nextLvlExpCup: 1000, currentExp: 0, label: 'Стрессоустойчивость', effect: 0, power: 1}
 ]
 type TState = typeof initialState
 

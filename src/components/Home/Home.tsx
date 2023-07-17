@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { handleCreateChipThunk } from "../../store/gameActions/handleCreateChipThunk";
+import { handleCreateChipThunk } from "../../store/gameLogicHandlers/handleCreateChipThunk";
 import { rootStateType } from "../../store/store";
 import  './Home.css'
 

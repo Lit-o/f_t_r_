@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { handleSearchElectricalComponentsThunk } from "../../store/gameActions/handleSearchElectricalComponentsThunk";
+import { handleSearchElectricalComponentsThunk } from "../../store/gameLogicHandlers/handleSearchElectricalComponentsThunk";
+import { healthRecoveryHandler } from "../../store/gameLogicHandlers/healthRecoveryCenter/healthRecoveryHandler";
 import { charCharacteristicsNamesEnum } from "../../store/reducers/char/charCharacteristicsReducer";
 import { charSkillsNamesEnum } from "../../store/reducers/char/charSkillsReducer";
 import { rootStateType } from "../../store/store";
@@ -15,7 +16,9 @@ function City() {
     const perception = array[charCharacteristicsNamesEnum.perception].currentLvl
  
     const handleSearchElectricalComponents = () => dispatch(handleSearchElectricalComponentsThunk(search, endurance, perception))
-    console.log(charCharacteristicsNamesEnum.endurance)
+    const healthRecoveryLocalHandler = () => dispatch(healthRecoveryHandler(10, 1000))
+
+
     return (
         <div className="main-city-page">
             <h2>Город</h2>
@@ -28,6 +31,13 @@ function City() {
                 <ul>
                     <li><button onClick={handleSearchElectricalComponents}
                     className="main-cyber-button">Искать электрокомпоненты</button></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Центр восстановления</h3>
+                <ul>
+                    <li><button onClick={healthRecoveryLocalHandler}
+                    className="main-cyber-button">Восстановить здоровье</button></li>
                 </ul>
             </div>
         </div>

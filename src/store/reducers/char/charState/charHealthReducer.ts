@@ -13,34 +13,44 @@ interface IActionCup {
 }
 export type IAction = IActionCurrent | IActionCup
 
+const cupHPStarter = 10
+
 const initialState = {
     LabelHP: 'Здоровье',
-    currentHP: 30,
-    cupHP: 30,
-    danger: false
+    currentHP: 1,
+    cupHP: cupHPStarter,
+    danger: true
 }
 type TState = typeof initialState
 
 const healthReducer = (state = initialState, action:IAction): TState => {
     switch (action.type) {
         case ActionTypeEnum.CURRENT_HP_CHANGE:
-            if (state.currentHP + action.value < state.cupHP * 0.2) {
+            const owerflowCheckedCurrentHP = state.currentHP + action.value >= state.cupHP ? state.cupHP : state.currentHP + action.value 
+            const isDanger = state.currentHP + action.value < state.cupHP * 0.2
+            
+            if (isDanger) {
                 return {
                     ...state,
-                    currentHP: state.currentHP + action.value,
+                    currentHP: owerflowCheckedCurrentHP,
                     danger: true
                 }
             } else {
                 return {
                     ...state,
-                    currentHP: state.currentHP + action.value,
+                    currentHP: owerflowCheckedCurrentHP,
                     danger: false
                 }
             }
+
+
+
+
+            
         case ActionTypeEnum.CUP_HP_CHANGE:
             return {
                 ...state,
-                cupHP: state.cupHP + action.value
+                cupHP: cupHPStarter + action.value
             }
         default: 
             return state

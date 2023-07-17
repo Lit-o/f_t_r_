@@ -15,15 +15,9 @@ const Header = () => {
     const endurance = useSelector((state: rootStateType) => state.charCharacteristics[1].currentLvl)
 
     const dispatch = useDispatch()
-    // const setCupHP = () => {
-    //     dispatch(charCupHPAction(1))
-    // }
 
     useEffect(()=> {
-        console.log(strength)
-        console.log(cupHP)
-        dispatch(charCupHPAction(1))
-
+        dispatch(charCupHPAction(strength + endurance))
     }, [strength, endurance])
 
     return (

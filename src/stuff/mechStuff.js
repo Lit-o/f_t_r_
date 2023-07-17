@@ -15,7 +15,7 @@ console.log(isChanceBigFunc(1))
 const lvlCupTo = (lvl) => {
     return ((lvl+1)*((lvl+1)-1)/2) * 10
 }
-console.log(lvlCupTo(4))
+console.log(lvlCupTo(1))
 // END-----------------------------------------------------------------------------
 
 // extraChance
