@@ -3,10 +3,6 @@ import { Dispatch } from "redux";
 import { rollExtraChances, rollExtraChancesEnum } from "../../../core/coreMechanics"
 import { charCurrentHPAction } from "../../actions/char/charState/charHealthAction";
 
-
-
-
-
 export const healthRecoveryHandler = (value: number, cost: number) => (dispatch: Dispatch) => {
   
   const extraChance = rollExtraChances()

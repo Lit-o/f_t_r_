@@ -46,7 +46,7 @@ const charCharacteristicsReducer = (state = initialState, action: IAction): TSta
                 ]        
                     // TODO Ввести else if и условие для кап прокачки  
                     // TODO Ввести предохранитель, на количство опыта превышающего 
-                    // поднятие на 1 уровень, возможно цикл с проверкой 
+                    // поднятие на 1 уровень, возможно цикл с проверкой do while
             } else {
                 const sumExp = newState[action.name].currentExp + action.gainedExp
                 const curExp = sumExp - newState[action.name].nextLvlExpCup 

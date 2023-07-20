@@ -42,16 +42,13 @@ const healthReducer = (state = initialState, action:IAction): TState => {
                     danger: false
                 }
             }
-
-
-
-
             
         case ActionTypeEnum.CUP_HP_CHANGE:
             return {
                 ...state,
                 cupHP: cupHPStarter + action.value
             }
+            
         default: 
             return state
     }
